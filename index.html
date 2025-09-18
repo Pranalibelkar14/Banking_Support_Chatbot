@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Banking Support — ChatBot</title>
+  <link rel="stylesheet" href="static/css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="/static/icon/bot.png" alt="bot" class="icon">
+        <h1>BankBot</h1>
+      </div>
+
+      <div class="controls">
+        <button id="new-chat" class="btn">➕ New Chat</button>
+        <button id="show-faqs" class="btn outline">📚 Show History</button>
+      </div>
+
+      <div class="history">
+        <h3>Recent chat</h3>
+        <div id="history-list">
+          {% for chat in chat_history|reverse %}
+            <div class="history-item">
+              <div class="h-user">{{ chat.user }}</div>
+              <div class="h-bot">{{ chat.bot }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <footer class="footer">
+        <small>Banking Support Bot • Demo</small>
+      </footer>
+    </aside>
+
+    <main class="main">
+      <div class="chat-header">
+        <div class="title">
+          <img src="/static/icon/bot.png" alt="bot" class="mini-icon">
+          <div>
+            <h2>Banking Support Bot</h2>
+            <p class="muted">Ask anything about accounts, cards, loans and more</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="chat-box" class="chat-box">
+        <!-- initial content -->
+        <div class="message bot-message">Hello! I'm your banking assistant. Try typing "balance" or click a FAQ below.</div>
+        {% for chat in chat_history %}
+          <div class="message user-message">{{ chat.user }}</div>
+          <div class="message bot-message">{{ chat.bot }}</div>
+        {% endfor %}
+      </div>
+
+      <div id="suggestions" class="suggestions"></div>
+
+      <div class="composer">
+        <input id="user-input" type="text" placeholder="Type your question..." autocomplete="off" />
+        <button id="send-btn" class="btn primary">Send</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // small config
+    const initialSuggestions = [
+      "what is my account balance",
+      "how can i reset my password",
+      "where is the nearest branch",
+      "how do i apply for a loan",
+      "how can i block my lost card",
+      "how do i open a new savings account"
+    ];
+  </script>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
