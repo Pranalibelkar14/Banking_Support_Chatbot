@@ -5,9 +5,8 @@ It helps users get quick answers about their bank accounts, cards, loans, and mo
 
 ---
 
-## 📸 Screenshot
+## 📸 Overview
 
-![Banking Chatbot UI]
 <img width="1912" height="967" alt="chatbot1" src="https://github.com/user-attachments/assets/41d36953-e6bc-48dc-bcf2-61aad4622f1c" />
 
 
@@ -44,24 +43,28 @@ It helps users get quick answers about their bank accounts, cards, loans, and mo
    
 ---
    
-2.**Create and activate a virtual environment**
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
+2. **Create and activate a virtual environment**
+   ```bash
+   python -m venv venv
+   # Windows
+   venv\Scripts\activate
+   # macOS/Linux
+   source venv/bin/activate
 
 ---
 
-3.**Install dependencies**
-pip install -r requirements.txt
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
 
 ---
 
-4.**Run the Flask app**
-python app.py
+4. **Run the Flask app**
+   ```bash   
+   python app.py
 
 ---
 
-5.**Open in your browser**
-http://127.0.0.1:5000
+5. **Open in your browser**
+   ```bash
+   http://127.0.0.1:5000
